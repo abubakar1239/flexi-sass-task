@@ -1,0 +1,128 @@
+@import "variables";
+@import "mixins";
+@import "animations";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: $light;
+  color: $dark;
+}
+
+/* NAV */
+nav {
+  background: $primary;
+  color: white;
+  padding: 15px;
+  @include flex-center;
+  justify-content: space-between;
+}
+
+/* TODO */
+.todo-container {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  animation: fadeIn 1s ease;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+
+  input {
+    flex: 1;
+    padding: 10px;
+  }
+
+  button {
+    background: $primary;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}
+
+ul {
+  margin-top: 20px;
+  list-style: none;
+
+  li {
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn .4s ease;
+
+    button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* DARK MODE */
+body.dark {
+  background: $dark;
+  color: white;
+
+  nav {
+    background: black;
+  }
+
+  li {
+    background: #1e293b;
+  }
+
+  input {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #555;
+  }
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  display: none;
+  @include flex-center;
+
+  .popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn .4s ease;
+  }
+}
+
+body.dark .popup-content {
+  background: #1e293b;
+  color: white;
+}
+
+/* RESPONSIVE */
+@include mobile {
+  .input-box {
+    flex-direction: column;
+  }
+}

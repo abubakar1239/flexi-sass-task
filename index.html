@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-<title>
-SASS PRACTICE
-</title>
-<link rel="stylesheet"  href="./css/header.css">
-<meta charset="UTF-8">
-<meta name="viewport"content="device-width, initial-scale=1.0">
-<meta name="theme-color" content="black">
-
+<head>
+  <link rel="stylesheet" href="main.css" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>
-sass css examples
-</h1>
 
+<nav>
+  <h1>Todo App</h1>
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<section class="todo-container">
+  <h2>Add your todo list</h2>
+
+  <div class="input-box">
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addBtn">Add</button>
+  </div>
+
+  <ul id="taskList"></ul>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p id="popupText"></p>
+    <button style= "color:white;width:80px; margin:10px; background-color:green; padding:5p;x" id="closePopup">OK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
